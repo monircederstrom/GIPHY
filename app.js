@@ -21,13 +21,15 @@ $("#add").on("click", function(event) {
 	event.preventDefault();
 	var music = $("#input").val().trim();
 	singers.push(music);
+	$("")
 	renderButtons();
 });
 
 
 renderButtons();
 
-$("button").on("click", function() {
+//link button click to giphys
+$(document).on("click", "button", function() {
 var singers = $(this).attr("data-name");
 var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + singers + "&api_key=LKu9IxoQTdCU5irRuQpXBXXT38RUIE70&limit=10&rating=pg13";
 
@@ -46,8 +48,8 @@ $.ajax({
 		var p = $("<p>").text("Rating: " + results[i].rating);
 		//create a img tag to display giph image
 		var singerImage = $("<img>");
-		//setting src attribute to image from results array
-		singerImage.attr("src", results[i].images.fixed_height.url);
+		//setting src attribute to image from results array in Still state
+		singerImage.attr("src", results[i].images.fixed_height_still.url);
 		//append p and img tag to singerDiv
 		singerImage.attr("data-state");
 	singerDiv.append(p);
@@ -61,7 +63,7 @@ $.ajax({
 });
 
 $(".music").on("click", function() {
-	var state = $(this).attr("data-state");
+	var state = $(this) .attr("data-state");
 	if (state === "still") {
 		$(this).attr("src", $(this).attr("data-animate"));
         $(this).attr("data-state", "animate");
