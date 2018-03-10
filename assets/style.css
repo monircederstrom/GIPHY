@@ -1,0 +1,36 @@
+button {
+	margin: .5%;
+	color: aqua;
+	background-color: magenta;
+	padding: .75%;
+}
+#add {
+	color: aqua;
+	background-color: magenta;
+
+}
+#input {
+	color: indigo;
+}
+body {
+	background-color: black;
+	color: yellow;
+	background: url("background.jpeg");
+	background-size: 100%;;
+	font-family: 'Coiny', cursive;
+}
+img {
+	float: left;
+	position: relative;
+	z-index: 1;
+	margin: 2%;
+}
+p {
+	float: left;
+	position: relative;
+	z-index: 2;
+	margin-left: 5%;
+}
+#viewbuttons {
+	margin-top: 2%;
+}
